@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## What's in this template?
+
+This template is built off of `npx create-next-app@latest --typescript` with the following additions:
+
+- Add `.nvmrc` file
+- Add [Prettier](https://prettier.io) support
+- Style using [TailwindCSS](https://tailwindcss.com)
+- Include `src` directory
+
 ## Getting Started
 
 First, run the development server:
