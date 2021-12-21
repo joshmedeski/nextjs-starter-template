@@ -1,10 +1,23 @@
-import Layout from '@/layout/Layout'
-import type { AppProps } from 'next/app'
+import { NextPage } from 'next'
+import type { AppProps as NextAppProps } from 'next/app'
 import React from 'react'
+
+import { LayoutType, getLayout } from '@/layout'
 
 import '../styles/globals.css'
 
-function App({ Component, pageProps }: AppProps) {
+type AppPage<T> = NextPage<T> & {
+    title?: string
+    layout?: LayoutType
+}
+
+type AppProps = NextAppProps & {
+    Component: AppPage<any>
+}
+
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+    const Layout = getLayout(pageProps.layout)
+
     return (
         <Layout>
             <Component {...pageProps} />
