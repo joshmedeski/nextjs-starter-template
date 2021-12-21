@@ -6,12 +6,12 @@ export type LayoutType = 'app' | 'landing' | 'marketing'
 
 export const getLayout = (type: LayoutType | undefined): React.FC => {
     switch (type) {
-        case 'marketing':
-            return MarketingLayout
+        case 'app':
+            return AppLayout
         case 'landing':
             return LandingLayout
-        case 'app':
+        case 'marketing':
         default:
-            return AppLayout
+            return MarketingLayout
     }
 }
