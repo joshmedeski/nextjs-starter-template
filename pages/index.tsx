@@ -3,9 +3,11 @@ import Head from 'next/head'
 
 import { NextPage } from '@/page'
 import { trpc } from '@/utils/trpc'
+import useSession from '@/utils/useSession'
 
 const HomePage: NextPage = () => {
   const hello = trpc.useQuery(['hello'])
+  const { data } = useSession()
 
   if (!hello.data) {
     return <div>Loading...</div>
@@ -37,6 +39,7 @@ const HomePage: NextPage = () => {
         </h1>
         <div>
           <p>{hello.data.greeting}</p>
+          <p>{data?.user?.email}</p>
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { signIn } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -51,6 +52,9 @@ const Header: React.FC = () => {
             ))}
             <li>
               <GitHubIcon />
+            </li>
+            <li>
+              <button onClick={() => signIn()}>Sign In</button>
             </li>
           </ul>
         </nav>
