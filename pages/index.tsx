@@ -2,8 +2,15 @@ import classNames from 'classnames'
 import Head from 'next/head'
 
 import { NextPage } from '@/page'
+import { trpc } from '@/utils/trpc'
 
 const HomePage: NextPage = () => {
+  const hello = trpc.useQuery(['hello'])
+
+  if (!hello.data) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div>
       <Head>
@@ -28,6 +35,9 @@ const HomePage: NextPage = () => {
           <br />
           for your next app
         </h1>
+        <div>
+          <p>{hello.data.greeting}</p>
+        </div>
       </section>
 
       <main>

@@ -1,10 +1,13 @@
+import { withTRPC } from '@trpc/next'
 import type { AppProps as NextAppProps } from 'next/app'
 import React from 'react'
 
 import { getLayout } from '@/layout'
 import { NextPage } from '@/page'
+import { getFullUrl } from '@/utils/url'
 
 import '../styles/globals.css'
+import { AppRouter } from './api/trpc/[trpc]'
 
 type AppProps = NextAppProps & {
   Component: NextPage<any>
@@ -20,4 +23,20 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   )
 }
 
-export default App
+export default withTRPC<AppRouter>({
+  config({ ctx }) {
+    return {
+      url: getFullUrl() + '/api/trpc'
+
+      /**
+       * @link https://react-query.tanstack.com/reference/QueryClient
+       */
+      // queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
+    }
+  },
+
+  /**
+   * @link https://trpc.io/docs/ssr
+   */
+  ssr: true
+})(App)
