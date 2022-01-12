@@ -1,6 +1,6 @@
 import AppLayout from './AppLayout'
 import LandingLayout from './LandingLayout'
-import MarketingLayout from './MarketingLayout'
+import MarketingLayout from './marketing'
 
 export type LayoutType = 'app' | 'landing' | 'marketing'
 

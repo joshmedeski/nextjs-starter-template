@@ -16,7 +16,7 @@ const HomePage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>NextJS Starter Template</title>
+        <title>Medeski Solutions Starter</title>
         <meta
           name="description"
           content="Starting point for building a NextJS app"
