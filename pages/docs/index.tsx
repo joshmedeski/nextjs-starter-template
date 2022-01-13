@@ -1,6 +1,6 @@
-import { AppPage } from 'pages/_app'
+import { NextPage } from '@/page'
 
-const DocsPage: AppPage = () => {
+const DocsPage: NextPage = () => {
   return <h1>Docs</h1>
 }
 
