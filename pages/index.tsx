@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Head from 'next/head'
 
-import { NextPage } from '@/page'
+import { NextPage } from '~/page'
 
 const HomePage: NextPage = () => {
   return (

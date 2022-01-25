@@ -1,6 +1,6 @@
 /* tslint:disable-next-line */
 module.exports = {
-  importOrder: ['^@/(.*)$', '^[./]'],
+  importOrder: ['^~/(.*)$', '^[./]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   printWidth: 80,

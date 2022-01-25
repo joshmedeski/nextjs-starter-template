@@ -1,4 +1,4 @@
-import { NextPage } from '@/page'
+import { NextPage } from '~/page'
 
 const BlogPage: NextPage = () => {
   return <h1>Blog</h1>

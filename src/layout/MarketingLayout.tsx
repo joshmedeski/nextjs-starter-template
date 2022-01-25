@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-import GitHubIcon from '@/branding/GitHubIcon'
+import GitHubIcon from '~/branding/GitHubIcon'
 
 const Header: React.FC = () => {
   const router = useRouter()
