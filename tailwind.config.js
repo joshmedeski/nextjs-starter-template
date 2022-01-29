@@ -7,19 +7,19 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          ...colors.blue
+          ...colors.blue,
         },
         cta: {
-          ...colors.orange
+          ...colors.orange,
         },
         gray: {
-          ...colors.stone
-        }
-      }
-    }
+          ...colors.stone,
+        },
+      },
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [require('@tailwindcss/typography')],
 }

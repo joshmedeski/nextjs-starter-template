@@ -2,9 +2,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-import { AppPage } from './_app'
+import { NextPage } from '~/page'
 
-const NotFoundPage: AppPage<void> = () => {
+const NotFoundPage: NextPage<void> = () => {
   const router = useRouter()
   return (
     <div>
@@ -27,5 +27,7 @@ const NotFoundPage: AppPage<void> = () => {
     </div>
   )
 }
+
+NotFoundPage.layout = 'centered'
 
 export default NotFoundPage

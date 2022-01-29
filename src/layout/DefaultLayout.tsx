@@ -5,14 +5,16 @@ import React from 'react'
 
 import GitHubIcon from '~/branding/GitHubIcon'
 
+import SiteTitle from './SiteTitle'
+
 const Header: React.FC = () => {
   const router = useRouter()
   const nav: { href: string; text: string }[] = [
     { href: '/', text: 'Home' },
-    { href: '/features', text: 'Features' },
     { href: '/docs', text: 'Docs' },
     { href: '/blog', text: 'Blog' },
-    { href: '/about', text: 'About' }
+    { href: '/about', text: 'About' },
+    { href: '/landing', text: 'Landing' },
   ]
 
   const isCurrent = (href: string) => {
@@ -26,11 +28,9 @@ const Header: React.FC = () => {
   return (
     <header className="max-w-screen-xl mx-auto w-full">
       <section className="flex justify-between p-4">
-        <h1>
-          <Link href="/">
-            <a className="font-bold">NextJS Starter Template</a>
-          </Link>
-        </h1>
+        <Link href="/" passHref>
+          <SiteTitle />
+        </Link>
 
         <nav>
           <ul className="flex">
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                     href={href}
                     className={classNames([
                       'px-3 py-2',
-                      { 'font-bold text-primary-500': isCurrent(href) }
+                      { 'font-bold text-primary-500': isCurrent(href) },
                     ])}
                   >
                     {text}
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
   )
 }
 
-const MarketingLayout: React.FC = ({ children }) => {
+const DefaultLayout: React.FC = ({ children }) => {
   return (
     <div className="flex flex-col justify-between min-h-screen">
       <div>
@@ -81,4 +81,14 @@ const MarketingLayout: React.FC = ({ children }) => {
   )
 }
 
-export default MarketingLayout
+export const CenteredLayout: React.FC = ({ children }) => {
+  return (
+    <div className="flex flex-col justify-between min-h-screen">
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </div>
+  )
+}
+
+export default DefaultLayout

@@ -21,7 +21,7 @@ const HomePage: NextPage = () => {
             'text-center',
             'text-4xl sm:text-5xl',
             'leading-none font-extrabold tracking-tight',
-            'sm:mt-10 mb-8 sm:mt-14 sm:mb-10'
+            'sm:mt-10 mb-8 sm:mt-14 sm:mb-10',
           ])}
         >
           The <span className="text-primary-500">starting point</span>

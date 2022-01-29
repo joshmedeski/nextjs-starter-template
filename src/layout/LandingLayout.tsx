@@ -1,9 +1,13 @@
 import React from 'react'
 
+import SiteTitle from './SiteTitle'
+
 const LandingLayout: React.FC = ({ children }) => {
   return (
     <div>
-      <h1>Landing Layout: </h1>
+      <div className="text-center mx-4 my-6">
+        <SiteTitle />
+      </div>
       {children}
     </div>
   )

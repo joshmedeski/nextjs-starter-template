@@ -1,17 +1,16 @@
-import AppLayout from './AppLayout'
+import DefaultLayout, { CenteredLayout } from './DefaultLayout'
 import LandingLayout from './LandingLayout'
-import MarketingLayout from './MarketingLayout'
 
-export type LayoutType = 'app' | 'landing' | 'marketing'
+export type LayoutType = 'landing' | 'centered'
 
 export const getLayout = (type: LayoutType | undefined): React.FC => {
+  console.log('type: ', type)
   switch (type) {
-    case 'app':
-      return AppLayout
     case 'landing':
       return LandingLayout
-    case 'marketing':
+    case 'centered':
+      return CenteredLayout
     default:
-      return MarketingLayout
+      return DefaultLayout
   }
 }
