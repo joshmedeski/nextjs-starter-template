@@ -4,7 +4,6 @@ import LandingLayout from './LandingLayout'
 export type LayoutType = 'landing' | 'centered'
 
 export const getLayout = (type: LayoutType | undefined): React.FC => {
-  console.log('type: ', type)
   switch (type) {
     case 'landing':
       return LandingLayout
